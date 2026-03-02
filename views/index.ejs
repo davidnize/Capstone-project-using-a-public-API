@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cocktail Finder</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+  <% if (cocktail) { %>
+    <div 
+      class="bg-image"
+      style="background-image: url('<%= cocktail.strDrinkThumb %>');">
+    </div>
+  <% } %>
+
+  <h1>🍸 Cocktail Finder</h1>
+
+  <form action="/cocktail" method="GET">
+    <button type="submit">Get Random Cocktail</button>
+  </form>
+
+  <% if (error) { %>
+    <p class="error"><%= error %></p>
+  <% } %>
+  
+  <% if (cocktail) { %>
+    <div class="card">
+      <h2><%= cocktail.strDrink %></h2>
+      <img src="<%= cocktail.strDrinkThumb %>">
+
+      <h3>Instructions</h3>
+      <p><%= cocktail.strInstructions %></p>
+
+      <h3>Ingredients</h3>
+      <ul>
+        <% for (let i = 1; i <= 15; i++) { 
+             if (cocktail["strIngredient" + i]) { %>
+          <li>
+            <%= cocktail["strIngredient" + i] %>
+            (<%= cocktail["strMeasure" + i] || "" %>)
+          </li>
+        <% } } %>
+      </ul>
+    </div>
+  <% } %>
+
+</body>
+</html>
