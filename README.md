@@ -26,14 +26,9 @@ A web application built with Express.js and Axios that fetches random cocktail r
 
 ---
 
-## 🚀 Installation & Setup
+## 🚀Get Started
 
-### 1️⃣ Clone the repository
-
-```bash
-git clone <your-repo-link>
-cd cocktail-finder
- 
+```bash 
 npm i
 nodemon index.js
 
