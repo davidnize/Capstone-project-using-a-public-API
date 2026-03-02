@@ -29,6 +29,6 @@ A web application built with Express.js and Axios that fetches random cocktail r
 ## 🚀 Get started
 
 - copy code
-
+```bash
 npm i
 nodemon index.js
